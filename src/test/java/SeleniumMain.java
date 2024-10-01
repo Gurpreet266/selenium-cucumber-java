@@ -54,6 +54,10 @@ public class SeleniumMain {
         String expectedUrl = "https://selenium143.blogspot.com/";
        // Assert.isTrue(flag,"new page not opened");
         Assert.assertEquals("new page not opened",expectedUrl, actualUrl);
+
+        //Click a button
+        driver.findElement(By.id("btn")).click();
+
         driver.quit();
 
 //        // open website
