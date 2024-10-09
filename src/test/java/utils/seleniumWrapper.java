@@ -21,14 +21,14 @@ public class seleniumWrapper {
     }
 
     //function 3 - quit browser
-    public boolean quitElement(By locator){
+    public boolean quitElement(){
         driver.quit();
         return true;
     }
 
 
     //function 4 - close current tab
-    public boolean closeElement(By locator) {
+    public boolean closeElement() {
         driver.close();
         return true;
     }
