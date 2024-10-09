@@ -16,8 +16,8 @@ public class seleniumWrapper {
 
     //function 2 - isDisplayed
     public boolean displayElement(By locator){
-        driver.findElement(locator).isDisplayed();
-        return true;
+       boolean flag=driver.findElement(locator).isDisplayed();
+        return flag;
     }
 
     //function 3 - quit browser
