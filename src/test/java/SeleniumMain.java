@@ -1,8 +1,8 @@
-import utils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import utils.seleniumWrapper;
 
 import java.time.Duration;
 
@@ -56,7 +56,7 @@ public class SeleniumMain {
        // Assert.isTrue(flag,"new page not opened");
         Assert.assertEquals("new page not opened",expectedUrl, actualUrl);
         driver.quit();
-        utils.seleniumWrapper obj = new utils.seleniumWrapper(); // package name.class name "obj" is the object we created to call functions
+        seleniumWrapper obj = new seleniumWrapper(); // package name.class name "obj" is the object we created to call functions
         obj.closeElement();                                      // of the class "seleniumWrapper"
 
 //        // open website
