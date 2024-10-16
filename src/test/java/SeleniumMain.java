@@ -40,8 +40,7 @@ public class SeleniumMain {
 
         //Check url of new tab is correct to validate the new tab is opened
         //Step 1 - check 2 tabs are open
-        int windowsCount =  driver.getWindowHandles().size();
-        Assert.assertEquals("Second window not opened", 2, windowsCount);
+        wrapper.windowsCount();
 
         //Step 2 - Switch to last opened tab (ie 2nd in our case)
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());

@@ -1,10 +1,13 @@
 package utils;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class seleniumWrapper {
+
+    seleniumWrapper wrapper = new seleniumWrapper();
 
     WebDriver driver = new EdgeDriver();
 
@@ -32,4 +35,13 @@ public class seleniumWrapper {
         driver.close();
         return true;
     }
+
+    public int getWindowsCount() {
+        int windowsCount =  driver.getWindowHandles().size();
+        Assert.assertEquals("Second window not opened", 2, windowsCount);
+
+        return windowsCount;
+    }
+
+
 }
