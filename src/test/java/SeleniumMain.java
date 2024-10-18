@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import utils.seleniumWrapper;
 
 import java.time.Duration;
 
@@ -39,8 +40,7 @@ public class SeleniumMain {
 
         //Check url of new tab is correct to validate the new tab is opened
         //Step 1 - check 2 tabs are open
-        int windowsCount =  driver.getWindowHandles().size();
-        Assert.assertEquals("Second window not opened", 2, windowsCount);
+        wrapper.windowsCount();
 
         //Step 2 - Switch to last opened tab (ie 2nd in our case)
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
@@ -55,6 +55,8 @@ public class SeleniumMain {
        // Assert.isTrue(flag,"new page not opened");
         Assert.assertEquals("new page not opened",expectedUrl, actualUrl);
         driver.quit();
+        seleniumWrapper obj = new seleniumWrapper(); // package name.class name "obj" is the object we created to call functions
+        obj.closeElement();                                      // of the class "seleniumWrapper"
 
 //        // open website
 //        driver.get("https://omayo.blogspot.com/");
@@ -95,3 +97,4 @@ public class SeleniumMain {
 //   System.out.println(driver.findElement(By.id()));
 //    }
 //}  driver.get vs driver.navigate.to()
+
